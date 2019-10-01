@@ -8,14 +8,14 @@ Ce TP concerne des requetes XPath éxécutées sur le fichier [mondial.xml](http
 
 ---
 
-1. Quel est la population de l'afrique
+1. Quel est la population de l'afrique ?
 
 ```XPath
 
 sum(/*/country/population[/*/country/encompassed[@continent = "africa"]])
 
 ```
-2. Combien de pays a-t-on en Afrique
+2. Combien de pays a-t-on en Afrique ?
 
 ```XPath
 
@@ -23,7 +23,7 @@ count(/*/country[encompassed[@continent = "africa"]])
 
 ```
 
-3. Quel sont les pays traversés par le Amazone
+3. Quel sont les pays traversés par le Amazone ?
 
 ```XPath
 
@@ -31,7 +31,7 @@ count(/*/country[encompassed[@continent = "africa"]])
 
 ```
 
-4. Quel sont les pays qui bordent l'ocean atlantique
+4. Quel sont les pays qui bordent l'ocean atlantique ?
 
 ```XPath
 
@@ -39,7 +39,7 @@ count(/*/country[encompassed[@continent = "africa"]])
 
 ```
 
-5. Combien de Musulmans en Europe
+5. Combien de Musulmans en Europe ?
 
 ```XPath
 
@@ -47,7 +47,7 @@ count(/*/country[religion[contains(.,"Muslim")] and encompassed[@continent = "eu
 
 ```
 
-6. Combien et quel sont les pays qui sont à plus d'un continent
+6. Combien et quel sont les pays qui sont à plus d'un continent ?
 
 ```XPath
 
@@ -57,7 +57,7 @@ count(/*/country[count(encompassed[@continent])>1])
 
 ```
 
-7. Quel sont les pays limitrophes de l'Allemagne
+7. Quel sont les pays limitrophes de l'Allemagne ?
 
 ```XPath
 
@@ -65,7 +65,7 @@ count(/*/country[count(encompassed[@continent])>1])
 
 ```
 
-8. Quel est le pays ou la population est la plus dense
+8. Quel est le pays ou la population est la plus dense ?
 
 ```XPath
 
