@@ -1,0 +1,31 @@
+1 - 
+
+sum(/*/country/population[/*/country/encompassed[@continent = "africa"]])
+
+2 - 
+
+count(/*/country[encompassed[@continent = "africa"]])
+
+3 -
+
+[/*/country/encompassed[@continent = "africa"]]
+
+4 - 
+
+/*/sea/name[contains(.,"Atlantic Ocean")]
+
+5 - 
+
+count(/*/country[religion[contains(.,"Muslim")] and encompassed[@continent = "europe"]])
+
+6 - 
+
+/*/country[count(encompassed[@continent])>1]
+
+7 - 
+
+/*/country[border[@country="D"]]
+
+8 - 
+
+/*/country[population[last()] = max(/*/country/population[last()])]
