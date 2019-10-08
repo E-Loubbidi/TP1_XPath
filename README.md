@@ -12,14 +12,14 @@ Ce TP concerne des requetes XPath éxécutées sur le fichier [mondial.xml](http
 
 ```XPath
 
-sum(/*/country/population[/*/country/encompassed[@continent = "africa"]])
+sum(/mondial/country/population[last()][following-sibling::encompassed[@continent="africa"]])
 
 ```
 2. Combien de pays a-t-on en Afrique ?
 
 ```XPath
 
-count(/*/country[encompassed[@continent = "africa"]])
+count(/mondial/country/encompassed[@continent="africa"]/..)
 
 ```
 
@@ -27,7 +27,7 @@ count(/*/country[encompassed[@continent = "africa"]])
 
 ```XPath
 
-/*/river[name[contains(.,"Amazonas")]]
+/mondial/country/province/city/located_at[@river="river-Amazonas"]/../../../name
 
 ```
 
@@ -35,7 +35,7 @@ count(/*/country[encompassed[@continent = "africa"]])
 
 ```XPath
 
-/*/sea/name[contains(.,"Atlantic Ocean")]
+/mondial/country/province/city/located_at[@sea="sea-Atlantic"]/../../../name
 
 ```
 
@@ -43,7 +43,7 @@ count(/*/country[encompassed[@continent = "africa"]])
 
 ```XPath
 
-count(/*/country[religion[contains(.,"Muslim")] and encompassed[@continent = "europe"]])
+sum(/mondial/country/religion[text()="Muslim"][preceding-sibling::encompassed[@continent="europe"]]/@percentage * ../population[last()] div 100)
 
 ```
 
@@ -51,9 +51,9 @@ count(/*/country[religion[contains(.,"Muslim")] and encompassed[@continent = "eu
 
 ```XPath
 
-count(/*/country[count(encompassed[@continent])>1])
+count(/mondial/country[count(encompassed/@continent)>1]/name)
 
-/*/country[count(encompassed[@continent])>1]
+/mondial/country[count(encompassed/@continent)>1]/name
 
 ```
 
@@ -61,7 +61,7 @@ count(/*/country[count(encompassed[@continent])>1])
 
 ```XPath
 
-/*/country[border[@country="D"]]
+/mondial/country/name[text()="Germany"]/following-sibling::border
 
 ```
 
