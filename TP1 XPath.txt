@@ -1,14 +1,14 @@
 1 - 
 
-sum(/*/country/population[/*/country/encompassed[@continent = "africa"]])
+sum(/mondial/country/population[last()][following-sibling::encompassed[@continent="africa"]])
 
 2 - 
 
-count(/*/country[encompassed[@continent = "africa"]])
+count(/mondial/country/encompassed[@continent="africa"]/..)
 
 3 -
 
-[/*/country/encompassed[@continent = "africa"]]
+/mondial/country/province/city/located_at[@river="river-Amazonas"]/../../../name
 
 4 - 
 
@@ -16,15 +16,17 @@ count(/*/country[encompassed[@continent = "africa"]])
 
 5 - 
 
-count(/*/country[religion[contains(.,"Muslim")] and encompassed[@continent = "europe"]])
+sum(/mondial/country/religion[text()="Muslim"][preceding-sibling::encompassed[@continent="europe"]]/@percentage * ../population[last()] div 100)
 
 6 - 
 
-/*/country[count(encompassed[@continent])>1]
+count(/mondial/country[count(encompassed/@continent)>1]/name)
+
+/mondial/country[count(encompassed/@continent)>1]/name
 
 7 - 
 
-/*/country[border[@country="D"]]
+/mondial/country/name[text()="Germany"]/following-sibling::border
 
 8 - 
 
