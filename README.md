@@ -43,7 +43,7 @@ count(/mondial/country/encompassed[@continent="africa"]/..)
 
 ```XPath
 
-sum(/mondial/country/religion[text()="Muslim"][preceding-sibling::encompassed[@continent="europe"]]/@percentage * ../population[last()] div 100)
+sum(/mondial/country/religion[text()="Muslim"][preceding-sibling::encompassed[@continent="europe"]]/(@percentage * ../population[last()])) div 100
 
 ```
 
