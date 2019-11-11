@@ -17,6 +17,7 @@ count(/mondial/country/encompassed[@continent="africa"]/..)
 5 - 
 
 sum(/mondial/country/religion[text()="Muslim"][preceding-sibling::encompassed[@continent="europe"]]/(@percentage * ../population[last()])) div 100
+
 6 - 
 
 count(/mondial/country[count(encompassed/@continent)>1]/name)
